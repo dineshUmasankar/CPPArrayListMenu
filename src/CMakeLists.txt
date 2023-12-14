@@ -1,8 +1,6 @@
 set(BINARY ${CMAKE_PROJECT_NAME})
 
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
-
-set(SOURCES ${SOURCES})
+set(SOURCES Command.h ExitCommand.h Formula.h ExitCommand.cpp Formula.cpp main.cpp)
 
 add_executable(${BINARY}_run ${SOURCES})
 

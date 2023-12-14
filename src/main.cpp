@@ -1,7 +1,9 @@
-#include "Formula.h"
+#include "Command.h"
+#include "ExitCommand.h"
 #include <iostream>
 
 int main() {
-  std::cout << "Bla: " << Formula::bla(2) << std::endl;
+  ExitCommand exitcmd;
+  exitcmd.execute();
   return 0;
 }
