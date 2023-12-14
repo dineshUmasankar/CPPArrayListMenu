@@ -1,9 +1,7 @@
-#include "Command.h"
-#include "ExitCommand.h"
-#include <iostream>
+#include "CLICommandMenu.h"
 
 int main() {
-  ExitCommand exitcmd;
-  exitcmd.execute();
+  CLICommandMenu menu;
+  menu.run();
   return 0;
 }
