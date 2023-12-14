@@ -1,0 +1,8 @@
+# build
+build/
+
+#CMakeCache
+.cache/
+
+#lib
+lib/
