@@ -9,16 +9,16 @@ using std::cerr;
 using std::cin;
 using std::cout;
 
-#ifndef ARRAYLIST_SEARCHCOMMAND_H
-#define ARRAYLIST_SEARCHCOMMAND_H
+#ifndef ARRAYLIST_ADDCOMMAND_H
+#define ARRAYLIST_ADDCOMMAND_H
 
-class SearchCommand : public Command {
+class AddCommand : public Command {
 private:
   InstanceMenu *menu;
   DataPool *pool;
 
 public:
-  SearchCommand(InstanceMenu &p_menu, DataPool &p_pool) {
+  AddCommand(InstanceMenu &p_menu, DataPool &p_pool) {
     menu = &p_menu;
     pool = &p_pool;
   }
@@ -31,8 +31,7 @@ public:
       int intData;
       requestInput(intData);
       if (validateInput(intData)) {
-        int index = pool->intInstance.indexOf(intData);
-        cout << "Index: " << index << endl;
+        pool->intInstance.add(intData);
       } else {
         cout << AppMessages::OperationCanceledMessage;
       }
@@ -41,8 +40,7 @@ public:
       bool boolData;
       requestInput(boolData);
       if (validateInput(boolData)) {
-        int index = pool->boolInstance.indexOf(boolData);
-        cout << "Index : " << index << endl;
+        pool->boolInstance.add(boolData);
       } else {
         cout << AppMessages::OperationCanceledMessage;
       }
@@ -51,8 +49,7 @@ public:
       char charData;
       requestInput(charData);
       if (validateInput(charData)) {
-        int index = pool->charInstance.indexOf(charData);
-        cout << "Index : " << index << endl;
+        pool->charInstance.add(charData);
       } else {
         cout << AppMessages::OperationCanceledMessage;
       }
@@ -61,8 +58,7 @@ public:
       double doubleData;
       requestInput(doubleData);
       if (validateInput(doubleData)) {
-        int index = pool->doubleInstance.indexOf(doubleData);
-        cout << "Index : " << index << endl;
+        pool->doubleInstance.add(doubleData);
       } else {
         cout << AppMessages::OperationCanceledMessage;
       }
@@ -71,8 +67,7 @@ public:
       float floatData;
       requestInput(floatData);
       if (validateInput(floatData)) {
-        int index = pool->floatInstance.indexOf(floatData);
-        cout << "Index : " << index << endl;
+        pool->floatInstance.add(floatData);
       } else {
         cout << AppMessages::OperationCanceledMessage;
       }
@@ -80,10 +75,6 @@ public:
     default:
       break;
     }
-    cout << endl;
-    cout << "Press Enter to Continue";
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    auto temp = cin.get();
   }
 
   template <typename T> bool validateInput(T &data) {
@@ -105,9 +96,9 @@ public:
   }
 
   template <typename T> void requestInput(T &data) {
-    cout << AppMessages::SearchDataMessage;
+    cout << AppMessages::AddDataMessage;
     cin >> data;
   }
 };
 
-#endif // ARRAYLIST_SEARCHCOMMAND_H
+#endif // ARRAYLIST_ADDCOMMAND_H

@@ -7,9 +7,9 @@ const string AppMessages::SelectCommandMenu = R"(
 ===================================
 Select which command you want to execute.
 ===================================
-1. Add Data to Insance
+1. Add Data to Instance
 2. List Instance
-3. Search Data from Instance
+3. Find (Search) Data from Instance
 4. Delete Data from Instance
 5. Update Data from Instance
 6. Save Instance to File Format
@@ -36,3 +36,12 @@ const string AppMessages::SelectChoiceMessage =
 
 const string AppMessages::InputErrorMessage =
     "Invalid Input. Please Try Again.";
+
+const string AppMessages::AddDataMessage = "Enter Data (0/1 for bool): ";
+
+const string AppMessages::SearchDataMessage = "Search Query (0/1 for bool): ";
+
+const string AppMessages::DeleteDataMessage = "Enter Index for Deletion: ";
+
+const string AppMessages::OperationCanceledMessage =
+    "Due to bad data, operation was canceled.";

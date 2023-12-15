@@ -12,6 +12,10 @@ public:
   static const string SelectInstanceMenu;
   static const string SelectChoiceMessage;
   static const string InputErrorMessage;
+  static const string AddDataMessage;
+  static const string OperationCanceledMessage;
+  static const string SearchDataMessage;
+  static const string DeleteDataMessage;
 };
 
 #endif

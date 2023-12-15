@@ -51,6 +51,28 @@ public:
     return array[index];
   }
 
+  int indexOf(const T &element) {
+    for (int index = 0; index < size; ++index) {
+      if (array[index] == element) {
+        return index;
+      }
+    }
+
+    return -1;
+  }
+
+  void removeAt(int index) {
+    if (index < 0 || index >= size) {
+      throw std::out_of_range("Index out of bounds");
+    }
+
+    for (int i = index; i < size - 1; ++i) {
+      array[i] = array[i + 1];
+    }
+
+    --size;
+  }
+
   void list() {
     for (int index = 0; index < size; ++index) {
       cout << array[index] << " ";

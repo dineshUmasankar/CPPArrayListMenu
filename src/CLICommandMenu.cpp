@@ -39,8 +39,17 @@ bool CLICommandMenu::validateInput(int &choice) {
 
 void CLICommandMenu::executeCommand(int &choice) {
   switch (choice) {
+  case 1:
+    addCmd.execute();
+    break;
   case 2:
     listCmd.execute();
+    break;
+  case 3:
+    searchCmd.execute();
+    break;
+  case 4:
+    deleteCmd.execute();
     break;
   case 8:
     exitCmd.execute();

@@ -6,16 +6,20 @@
 
 using std::cin;
 using std::cout;
+using std::endl;
 
-ListCommand::ListCommand(InstanceMenu &p_menu, DataPool &p_pool) {
+ListCommand::ListCommand(InstanceMenu &p_menu, DataPool &p_pool)
+{
   menu = &p_menu;
   pool = &p_pool;
 }
 
-void ListCommand::execute() {
+void ListCommand::execute()
+{
   int ArrayListInstance = menu->run();
 
-  switch (ArrayListInstance) {
+  switch (ArrayListInstance)
+  {
   case 1:
     pool->intInstance.list();
     break;
@@ -31,12 +35,10 @@ void ListCommand::execute() {
   case 5:
     pool->floatInstance.list();
     break;
-  case 6:
-    return;
   default:
     break;
   }
-
+  cout << endl;
   cout << "Press Enter to Continue";
   cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   auto temp = cin.get();
