@@ -14,7 +14,7 @@ public:
   void displayMenu();
   void run() override;
   void processInput(int &choice);
-  void validateInput(int &choice);
+  bool validateInput(int &choice);
   void executeCommand(int &choice);
 };
 

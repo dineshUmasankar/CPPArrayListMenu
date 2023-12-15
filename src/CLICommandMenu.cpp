@@ -1,6 +1,7 @@
 #include "CLICommandMenu.h"
 #include "AppMessages.h"
 #include <iostream>
+#include <limits>
 
 using std::cerr;
 using std::cin;
@@ -11,25 +12,37 @@ void CLICommandMenu::displayMenu() { cout << AppMessages::SelectCommandMenu; }
 void CLICommandMenu::processInput(int &choice) {
   cout << AppMessages::SelectChoiceMessage;
   cin >> choice;
-
-  if (cin.fail()) {
-    cout << AppMessages::InputErrorMessage;
-    choice = 0;
-  }
 }
 
-void CLICommandMenu::validateInput(int &choice) {
-  if (choice > 9) {
+bool CLICommandMenu::validateInput(int &choice) {
+  if (choice > 8) {
     cerr << AppMessages::InputErrorMessage;
-    choice = 0;
+    return false;
   }
+
+  if (cin.bad()) {
+    cerr << AppMessages::InputErrorMessage;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max());
+    return false;
+  }
+
+  if (cin.fail()) {
+    cerr << AppMessages::InputErrorMessage;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    return false;
+  }
+
+  return true;
 }
 
 void CLICommandMenu::executeCommand(int &choice) {
   switch (choice) {
   case 2:
     listCmd.execute();
-  case 9:
+    break;
+  case 8:
     exitCmd.execute();
     break;
   default:
@@ -43,7 +56,8 @@ void CLICommandMenu::run() {
   do {
     displayMenu();
     processInput(choice);
-    validateInput(choice);
-    executeCommand(choice);
-  } while (choice != 9);
+    if (validateInput(choice)) {
+      executeCommand(choice);
+    };
+  } while (choice != 8);
 }

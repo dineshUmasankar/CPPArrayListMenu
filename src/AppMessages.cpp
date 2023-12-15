@@ -31,7 +31,7 @@ Select which instance you want to list.
 )";
 
 const string AppMessages::SelectChoiceMessage =
-    "Please enter the numer corresponding to the action you want: ";
+    "Please enter the number corresponding to the action you want: ";
 
 const string AppMessages::InputErrorMessage =
     "Invalid Input. Please Try Again.";
