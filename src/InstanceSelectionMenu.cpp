@@ -1,37 +1,42 @@
 #include "InstanceSelectionMenu.h"
 #include "AppMessages.h"
 #include <iostream>
+#include <limits>
 
 using std::cerr;
 using std::cin;
 using std::cout;
 
 void InstanceSelectionMenu::displayMenu() {
-  cout << AppMessages::SelectCommandMenu;
+  cout << AppMessages::SelectInstanceMenu;
 }
 
 void InstanceSelectionMenu::processInput(int &choice) {
-  cout << AppMessages::SelectInstanceMenu;
+  cout << AppMessages::SelectChoiceMessage;
   cin >> choice;
-
-  if (cin.fail()) {
-    cout << AppMessages::InputErrorMessage;
-    choice = 0;
-  }
 }
 
-void InstanceSelectionMenu::validateInput(int &choice) {
+bool InstanceSelectionMenu::validateInput(int &choice) {
   if (choice > 6) {
     cerr << AppMessages::InputErrorMessage;
-    choice = 0;
+    return false;
   }
-}
 
-void InstanceSelectionMenu::executeCommand(int &choice) {
-  switch (choice) {
-  default:
-    break;
+  if (cin.bad()) {
+    cerr << AppMessages::InputErrorMessage;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max());
+    return false;
   }
+
+  if (cin.fail()) {
+    cerr << AppMessages::InputErrorMessage;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    return false;
+  }
+
+  return true;
 }
 
 void InstanceSelectionMenu::run() {
@@ -41,6 +46,5 @@ void InstanceSelectionMenu::run() {
     displayMenu();
     processInput(choice);
     validateInput(choice);
-    executeCommand(choice);
-  } while (choice != 9);
+  } while (choice != 6);
 }

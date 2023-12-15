@@ -13,7 +13,7 @@ private:
 public:
   void displayMenu();
   void run() override;
-  void processInput(int &choice);
+  void requestInput(int &choice);
   bool validateInput(int &choice);
   void executeCommand(int &choice);
 };

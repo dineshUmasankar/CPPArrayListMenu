@@ -8,8 +8,7 @@ public:
   void displayMenu();
   void run() override;
   void processInput(int &choice);
-  void validateInput(int &choice);
-  void executeCommand(int &choice);
+  bool validateInput(int &choice);
 };
 
 #endif // ARRAYLIST_CLI_INSTANCE_SELECTION_MENU_H

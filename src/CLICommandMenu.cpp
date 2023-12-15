@@ -9,7 +9,7 @@ using std::cout;
 
 void CLICommandMenu::displayMenu() { cout << AppMessages::SelectCommandMenu; }
 
-void CLICommandMenu::processInput(int &choice) {
+void CLICommandMenu::requestInput(int &choice) {
   cout << AppMessages::SelectChoiceMessage;
   cin >> choice;
 }
@@ -55,7 +55,7 @@ void CLICommandMenu::run() {
 
   do {
     displayMenu();
-    processInput(choice);
+    requestInput(choice);
     if (validateInput(choice)) {
       executeCommand(choice);
     };
