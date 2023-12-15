@@ -14,8 +14,7 @@ Select which command you want to execute.
 5. Update Data from Instance
 6. Save Instance to File Format
 7. Load Instance from File Format
-8. Sort Data from Instance
-9. Exit Program
+8. Exit Program
 ===================================
 )";
 

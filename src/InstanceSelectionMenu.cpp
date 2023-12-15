@@ -1,4 +1,4 @@
-#include "CLICommandMenu.h"
+#include "InstanceSelectionMenu.h"
 #include "AppMessages.h"
 #include <iostream>
 
@@ -6,10 +6,12 @@ using std::cerr;
 using std::cin;
 using std::cout;
 
-void CLICommandMenu::displayMenu() { cout << AppMessages::SelectCommandMenu; }
+void InstanceSelectionMenu::displayMenu() {
+  cout << AppMessages::SelectCommandMenu;
+}
 
-void CLICommandMenu::processInput(int &choice) {
-  cout << AppMessages::SelectChoiceMessage;
+void InstanceSelectionMenu::processInput(int &choice) {
+  cout << AppMessages::SelectInstanceMenu;
   cin >> choice;
 
   if (cin.fail()) {
@@ -18,26 +20,21 @@ void CLICommandMenu::processInput(int &choice) {
   }
 }
 
-void CLICommandMenu::validateInput(int &choice) {
-  if (choice > 9) {
+void InstanceSelectionMenu::validateInput(int &choice) {
+  if (choice > 6) {
     cerr << AppMessages::InputErrorMessage;
     choice = 0;
   }
 }
 
-void CLICommandMenu::executeCommand(int &choice) {
+void InstanceSelectionMenu::executeCommand(int &choice) {
   switch (choice) {
-  case 2:
-    listCmd.execute();
-  case 9:
-    exitCmd.execute();
-    break;
   default:
     break;
   }
 }
 
-void CLICommandMenu::run() {
+void InstanceSelectionMenu::run() {
   int choice;
 
   do {
