@@ -1,4 +1,4 @@
-#include "InstanceSelectionMenu.h"
+#include "InstanceMenu.h"
 #include "AppMessages.h"
 #include <iostream>
 #include <limits>
@@ -7,16 +7,14 @@ using std::cerr;
 using std::cin;
 using std::cout;
 
-void InstanceSelectionMenu::displayMenu() {
-  cout << AppMessages::SelectInstanceMenu;
-}
+void InstanceMenu::displayMenu() { cout << AppMessages::SelectInstanceMenu; }
 
-void InstanceSelectionMenu::processInput(int &choice) {
+void InstanceMenu::requestInput(int &choice) {
   cout << AppMessages::SelectChoiceMessage;
   cin >> choice;
 }
 
-bool InstanceSelectionMenu::validateInput(int &choice) {
+bool InstanceMenu::validateInput(int &choice) {
   if (choice > 6) {
     cerr << AppMessages::InputErrorMessage;
     return false;
@@ -39,12 +37,16 @@ bool InstanceSelectionMenu::validateInput(int &choice) {
   return true;
 }
 
-void InstanceSelectionMenu::run() {
+int InstanceMenu::run() {
   int choice;
 
   do {
     displayMenu();
-    processInput(choice);
-    validateInput(choice);
+    requestInput(choice);
+    if (validateInput(choice)) {
+      break;
+    }
   } while (choice != 6);
+
+  return choice;
 }

@@ -1,4 +1,5 @@
 #include "CLICommandMenu.h"
+#include <iostream>
 
 int main() {
   CLICommandMenu menu;

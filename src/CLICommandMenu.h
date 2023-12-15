@@ -1,4 +1,6 @@
+#include "DataPool.h"
 #include "ExitCommand.h"
+#include "InstanceMenu.h"
 #include "ListCommand.h"
 #include "Menu.h"
 
@@ -7,8 +9,10 @@
 
 class CLICommandMenu : public Menu {
 private:
+  InstanceMenu instanceMenu;
+  DataPool instanceData;
   ExitCommand exitCmd;
-  ListCommand listCmd;
+  ListCommand listCmd = ListCommand(instanceMenu, instanceData);
 
 public:
   void displayMenu();
