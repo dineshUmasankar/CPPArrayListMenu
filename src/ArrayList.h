@@ -1,6 +1,8 @@
+#include <fstream>
 #include <iostream>
 #include <memory>
 #include <stdexcept>
+#include <typeinfo>
 
 #ifndef ARRAYLIST
 #define ARRAYLIST
@@ -85,6 +87,18 @@ public:
     for (int index = 0; index < size; ++index) {
       cout << array[index] << " ";
     }
+  }
+
+  void save(const std::string &filename) const {
+    std::ofstream outputFile(filename);
+
+    outputFile << "type, data" << endl;
+
+    for (int index = 0; index < size; ++index) {
+      outputFile << typeid(T).name() << "," << array[index] << endl;
+    }
+
+    outputFile.close();
   }
 
   ~ArrayList() {

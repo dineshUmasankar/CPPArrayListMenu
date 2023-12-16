@@ -17,6 +17,7 @@ public:
   static const string SearchDataMessage;
   static const string DeleteDataMessage;
   static const string UpdateDataMessage;
+  static const string SaveFilenameMessage;
 };
 
 #endif

@@ -13,6 +13,8 @@ private:
 public:
   SaveCommand(InstanceMenu &p_menu, DataPool &p_pool);
   void execute() override;
+  void requestInput(std::string &input);
+  bool validateInput(std::string &input);
 };
 
 #endif // ARRAYLIST_SAVECOMMAND_H

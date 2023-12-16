@@ -51,6 +51,9 @@ void CLICommandMenu::executeCommand(int &choice) {
   case 4:
     deleteCmd.execute();
     break;
+  case 5:
+    cout << "Not Implemented." << endl;
+    break;
   case 6:
     saveCmd.execute();
     break;

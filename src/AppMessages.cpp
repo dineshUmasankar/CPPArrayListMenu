@@ -45,5 +45,7 @@ const string AppMessages::DeleteDataMessage = "Enter Index for Deletion: ";
 
 const string AppMessages::UpdateDataMessage = "Update Data at which Index: ";
 
+const string AppMessages::SaveFilenameMessage = "Enter filename to save data: ";
+
 const string AppMessages::OperationCanceledMessage =
     "Due to bad data, operation was canceled.";
