@@ -8,6 +8,7 @@
 #include "SaveCommand.h"
 #include "SearchCommand.h"
 #include "SortCommand.h"
+#include "UpdateCommand.h"
 
 #ifndef ARRAYLIST_CLI_COMMAND_MENU_H
 #define ARRAYLIST_CLI_COMMAND_MENU_H
@@ -23,6 +24,7 @@ private:
   DeleteCommand deleteCmd = DeleteCommand(instanceMenu, instanceData);
   SaveCommand saveCmd = SaveCommand(instanceMenu, instanceData);
   SortCommand sortCmd = SortCommand(instanceMenu, instanceData);
+  UpdateCommand updateCmd = UpdateCommand(instanceMenu, instanceData);
 
 public:
   void displayMenu();

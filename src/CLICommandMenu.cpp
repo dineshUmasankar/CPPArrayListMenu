@@ -52,7 +52,7 @@ void CLICommandMenu::executeCommand(int &choice) {
     deleteCmd.execute();
     break;
   case 5:
-    cout << "Not Implemented." << endl;
+    updateCmd.execute();
     break;
   case 6:
     sortCmd.execute();
