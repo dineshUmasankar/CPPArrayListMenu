@@ -20,7 +20,7 @@ Select which command you want to execute.
 
 const string AppMessages::SelectInstanceMenu = R"(
 ===================================
-Select which instance you want to list.
+Select which instance you want to perform this operation on.
 ===================================
 1. Int
 2. Bool
@@ -45,7 +45,8 @@ const string AppMessages::DeleteDataMessage = "Enter Index for Deletion: ";
 
 const string AppMessages::UpdateDataMessage = "Update Data at which Index: ";
 
-const string AppMessages::SaveFilenameMessage = "Enter filename to save data: ";
+const string AppMessages::SaveFilenameMessage =
+    "Enter filename to save data (must include suffix [sample.csv]): ";
 
 const string AppMessages::OperationCanceledMessage =
     "Due to bad data, operation was canceled.";
