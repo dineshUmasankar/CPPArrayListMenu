@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -100,6 +101,8 @@ public:
 
     outputFile.close();
   }
+
+  void sort() { std::sort(array.get(), array.get() + size); }
 
   ~ArrayList() {
     // The Destructor of std::unique_ptr will automatically release the memory.

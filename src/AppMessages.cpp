@@ -12,8 +12,8 @@ Select which command you want to execute.
 3. Find (Search) Data from Instance
 4. Delete Data from Instance
 5. Update Data from Instance
-6. Save Instance to File Format
-7. Load Instance from File Format
+6. Sort Data from Instance
+7. Save Instance to File Format
 8. Exit Program
 ===================================
 )";
