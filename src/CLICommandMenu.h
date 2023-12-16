@@ -5,6 +5,7 @@
 #include "InstanceMenu.h"
 #include "ListCommand.h"
 #include "Menu.h"
+#include "SaveCommand.h"
 #include "SearchCommand.h"
 
 #ifndef ARRAYLIST_CLI_COMMAND_MENU_H
@@ -19,6 +20,7 @@ private:
   ListCommand listCmd = ListCommand(instanceMenu, instanceData);
   SearchCommand searchCmd = SearchCommand(instanceMenu, instanceData);
   DeleteCommand deleteCmd = DeleteCommand(instanceMenu, instanceData);
+  SaveCommand saveCmd = SaveCommand(instanceMenu, instanceData);
 
 public:
   void displayMenu();
