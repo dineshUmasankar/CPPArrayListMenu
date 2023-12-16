@@ -16,6 +16,7 @@ public:
   static const string OperationCanceledMessage;
   static const string SearchDataMessage;
   static const string DeleteDataMessage;
+  static const string UpdateDataMessage;
 };
 
 #endif

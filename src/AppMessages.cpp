@@ -43,5 +43,7 @@ const string AppMessages::SearchDataMessage = "Search Query (0/1 for bool): ";
 
 const string AppMessages::DeleteDataMessage = "Enter Index for Deletion: ";
 
+const string AppMessages::UpdateDataMessage = "Update Data at which Index: ";
+
 const string AppMessages::OperationCanceledMessage =
     "Due to bad data, operation was canceled.";

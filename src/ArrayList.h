@@ -73,6 +73,14 @@ public:
     --size;
   }
 
+  void updateAt(int index, const T &element) {
+    if (index < 0 || index >= size) {
+      throw std::out_of_range("Index out of bounds");
+    }
+
+    array[index] = element;
+  }
+
   void list() {
     for (int index = 0; index < size; ++index) {
       cout << array[index] << " ";
